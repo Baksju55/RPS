@@ -27,36 +27,20 @@
     <button onclick="
       player_choice = 'Rock' ; 
       generate_computer_output();
-      if (computer_choice === 'Rock')
-        alert('Tie!');
-      else if(computer_choice === 'Paper')
-        alert('Player loses');
-       else
-         alert('Player won!');
-         console.log(player_choice);
+      check_effect();
       " class = 'button1'>Rock</button>
 
     <button onclick="
     player_choice = 'Paper';
     generate_computer_output();
-    if (computer_choice === 'Paper')
-      alert('Tie!');
-    else if(computer_choice === 'Rock')
-      alert('Player won!');
-    else
-      alert('Player loses');
+    check_effect();
     console.log(player_choice);
     " class = 'button2'>Paper</button>
 
     <button onclick="
     player_choice ='Scissors';
     generate_computer_output();
-    if (computer_choice === 'Scissors')
-      alert('Tie!');
-    else if(computer_choice === 'Rock')
-      alert('Player loses');
-    else
-      alert('Player won!');
+    check_effect();
     console.log(player_choice);
     " class = 'button3'>Scissors</button>
     <p>You do not need to restart this page to play multiple times </p>
@@ -76,7 +60,40 @@
        computer_choice = 'Paper' ; 
       else if(computer_number_choice >= 2)
        computer_choice = 'Scissors' ; 
-      }
+      } 
+      function check_effect()
+      {
+        let string_output = `You picked ${player_choice} , computer picked ${computer_choice} so`;
+        if(player_choice === 'Rock')
+        {
+          if (computer_choice === 'Rock')
+            string_output+= ` it is Tie!`;
+           else if(computer_choice === 'Paper')
+           string_output+= ` Player loses!`;
+           else
+            string_output+= ` Player won!`;
+        }
+        else if(player_choice === 'Paper')
+        {
+          if (computer_choice === 'Paper')
+           string_output+= ` it is Tie!`;
+          else if(computer_choice === 'Rock')
+           string_output+= ` Player loses!`;
+          else
+           string_output+= ` Player won!`;
+        }
+        else
+        {
+          if (computer_choice === 'Scissors')
+            string_output+= ` it is Tie!`;
+          else if(computer_choice === 'Rock')
+           string_output+= ` Player loses!`;
+          else
+          string_output+= ` Player won!`;
+        }
+        alert(string_output);
+
+      };
    </script>
   </body>
 </html>
