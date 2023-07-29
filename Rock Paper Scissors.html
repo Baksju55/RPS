@@ -26,6 +26,7 @@
   <body>
     <button onclick="
       player_choice = 'Rock' ; 
+      generate_computer_output();
       if (computer_choice === 'Rock')
         alert('Tie!');
       else if(computer_choice === 'Paper')
@@ -37,6 +38,7 @@
 
     <button onclick="
     player_choice = 'Paper';
+    generate_computer_output();
     if (computer_choice === 'Paper')
       alert('Tie!');
     else if(computer_choice === 'Rock')
@@ -48,6 +50,7 @@
 
     <button onclick="
     player_choice ='Scissors';
+    generate_computer_output();
     if (computer_choice === 'Scissors')
       alert('Tie!');
     else if(computer_choice === 'Rock')
@@ -56,13 +59,16 @@
       alert('Player won!');
     console.log(player_choice);
     " class = 'button3'>Scissors</button>
-    <p>To restart reload this page</p>
+    <p>You do not need to restart this page to play multiple times </p>
 
     <script>
       // generates random number between 1 and 3 , and then picks computers move based on that number.
       let player_choice ; 
       let computer_choice ; 
-      let computer_number_choice = Math.random() *3  ;
+      let computer_number_choice ;
+      function generate_computer_output()
+      {
+      computer_number_choice =  Math.random() *3  ; 
       console.log(computer_number_choice);
       if(computer_number_choice >= 0 && computer_number_choice <= 1 )
        computer_choice = 'Rock' ;
@@ -70,7 +76,7 @@
        computer_choice = 'Paper' ; 
       else if(computer_number_choice >= 2)
        computer_choice = 'Scissors' ; 
-
+      }
    </script>
   </body>
 </html>
