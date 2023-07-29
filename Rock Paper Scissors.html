@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>lesson 5</title>
+  <style>  
+  .button1 
+  {
+    outline-color: blue;
+    outline-width: 2cm;
+    background-color: rgb(226, 137, 43);
+  }
+  .button2
+  {
+    outline-color: blue;
+    outline-width: 2cm;
+    background-color: rgb(151, 146, 181);
+  }
+  .button3
+  {
+    outline-color: blue;
+    outline-width: 2cm;
+    background-color: rgb(46, 226, 43);
+  }
+  </style>
+</head>
+  <body>
+    <button onclick="
+      player_choice = 'Rock' ; 
+      if (computer_choice === 'Rock')
+        alert('Tie!');
+      else if(computer_choice === 'Paper')
+        alert('Player loses');
+       else
+         alert('Player won!');
+         console.log(player_choice);
+      " class = 'button1'>Rock</button>
+
+    <button onclick="
+    player_choice = 'Paper';
+    if (computer_choice === 'Paper')
+      alert('Tie!');
+    else if(computer_choice === 'Rock')
+      alert('Player won!');
+    else
+      alert('Player loses');
+    console.log(player_choice);
+    " class = 'button2'>Paper</button>
+
+    <button onclick="
+    player_choice ='Scissors';
+    if (computer_choice === 'Scissors')
+      alert('Tie!');
+    else if(computer_choice === 'Rock')
+      alert('Player loses');
+    else
+      alert('Player won!');
+    console.log(player_choice);
+    " class = 'button3'>Scissors</button>
+    <p>To restart reload this page</p>
+
+    <script>
+      // generates random number between 1 and 3 , and then picks computers move based on that number.
+      let player_choice ; 
+      let computer_choice ; 
+      let computer_number_choice = Math.random() *3  ;
+      console.log(computer_number_choice);
+      if(computer_number_choice >= 0 && computer_number_choice <= 1 )
+       computer_choice = 'Rock' ;
+      else if(computer_number_choice >= 1 && computer_number_choice <=2 )
+       computer_choice = 'Paper' ; 
+      else if(computer_number_choice >= 2)
+       computer_choice = 'Scissors' ; 
+
+   </script>
+  </body>
+</html>
